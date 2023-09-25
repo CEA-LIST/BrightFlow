@@ -1,0 +1,7 @@
+pytorch
+torchvision
+opencv-python
+einops
+scikit-image
+faiss-gpu
+tensorboard

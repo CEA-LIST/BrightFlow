@@ -1,0 +1,17 @@
+python train.py \
+--ckpt_dir /path/to/checkpoint/dir/ \
+--log_dir /path/to/log/dir/ \
+--restore_ckpt /path/to/checkpoint.pth \
+--name baseline \
+--dataset_train Sintel \
+--dataset_test Sintel \
+--model raft \
+--batch_size 8 \
+--num_steps 75000 \
+--lr 0.0002 \
+--lr_decay_step 15000 \
+--census_weight_flow 1. \
+--selfsup_starting_step 30000 \
+--selfsup_end_rising_step 37500 \
+--selfsup_weight_max 0.3 \
+--mode flow_only \

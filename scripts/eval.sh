@@ -1,0 +1,21 @@
+~/miniconda3/envs/brightflow2/bin/python -u evaluate.py \
+--name KITTI \
+--dataset_train KITTI \
+--dataset_test KITTI \
+--model raft \
+--batch_size 1 \
+--num_steps 75000 \
+--lr 0.0002 \
+--lr_decay_step 15000 \
+--crop_size 296 696 \
+--occlusions wang \
+--census_weight_flow 0.5 \
+--unflow_weight_flow 0. \
+--l1_weight_flow 0. \
+--census_weight_correc 0. \
+--unflow_weight_correc 0. \
+--l1_weight_correc 1. \
+--selfsup_starting_step 30000 \
+--selfsup_end_rising_step 37500 \
+--selfsup_weight_max 0.3 \
+--restore_ckpt /path/to/checkpoint.pth \
