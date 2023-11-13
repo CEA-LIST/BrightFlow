@@ -118,14 +118,14 @@ class MpiSintel(FlowDataset):
 
 
 class FlyingChairs(FlowDataset):
-    def __init__(self, aug_params=None, split='training', root='/home/data/rmarsal/FlyingChairs_release/data'):
+    def __init__(self, aug_params=None, split='training', root='/path/to/FlyingChairs_release/data'):
         super(FlyingChairs, self).__init__(aug_params)
 
         images = sorted(glob(osp.join(root, '*.ppm')))
         flows = sorted(glob(osp.join(root, '*.flo')))
         assert (len(images)//2 == len(flows))
 
-        split_list = np.loadtxt('/home/data/rmarsal/FlyingChairs_release/FlyingChairs_train_val.txt', dtype=np.int32)
+        split_list = np.loadtxt('/path/to/FlyingChairs_release/FlyingChairs_train_val.txt', dtype=np.int32)
         for i in range(len(flows)):
             xid = split_list[i]
             if (split=='training' and xid==1) or (split=='validation' and xid==2):
